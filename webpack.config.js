@@ -9,8 +9,9 @@ module.exports = (env, argv) => {
   return {
     entry: "./src/app.js",
     output: {
-      path: path.resolve(__dirname, "public"),
+      path: path.resolve(__dirname, "public", "dist"),
       filename: "bundle.js",
+      publicPath: '/dist/'
     },
     mode: "development",
     module: {
@@ -54,6 +55,7 @@ module.exports = (env, argv) => {
     devServer: {
       static: path.resolve(__dirname, "public"),
       historyApiFallback: true,
+      
       compress: true, 
           port: 8080
     }
